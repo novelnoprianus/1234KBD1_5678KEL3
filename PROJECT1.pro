@@ -1,0 +1,543 @@
+DOMAINS
+nama=symbol
+nim=integer 
+
+FACTS
+orang(nama,nim)
+
+PREDICATES
+nondeterm run
+nondeterm harga
+nondeterm pilihanharga(char)
+nondeterm pilih1
+nondeterm pilih2
+nondeterm pilih3
+nondeterm pilih4
+nondeterm pilih5
+nondeterm lanjut11
+nondeterm lanjut21
+nondeterm lanjut32
+nondeterm lanjut20
+nondeterm lanjut30
+nondeterm lanjut40
+nondeterm lanjut50
+nondeterm lanjut60
+nondeterm lanjut70
+nondeterm lanjut80
+nondeterm lanjut90
+nondeterm lanjut100
+nondeterm lanjut33
+nondeterm lanjut34
+nondeterm lanjut10
+nondeterm cc11
+nondeterm cc21
+nondeterm cc12
+nondeterm cc22
+nondeterm cc13
+nondeterm cc14
+nondeterm cc24
+nondeterm terus1(char)
+nondeterm terus2(char)
+nondeterm terus3(char)
+nondeterm terus4(char)
+nondeterm terus5(char)
+nondeterm terus6(char)
+nondeterm terus7(char)
+nondeterm terus8(char)
+nondeterm terus9(char)
+nondeterm terus10(char)
+nondeterm terus11(char)
+nondeterm back1(char)
+nondeterm back11(char)
+nondeterm back2(char)
+nondeterm back22(char)
+nondeterm back3(char)
+nondeterm back33(char)
+nondeterm back4(char)
+nondeterm back44(char)
+nondeterm back5(char)
+nondeterm back55(char)
+nondeterm back6(char)
+nondeterm back66(char)
+nondeterm back7(char)
+nondeterm back77(char)
+nondeterm back8(char)
+nondeterm akhir
+nondeterm keluar(char)
+nondeterm hasil(char)
+rx(char,char)
+ww(char,char)
+nn(char,char)
+
+CLAUSES
+rx(Y,Y):-!.
+rx(_,_):-fail.
+run:-
+write("\t\t\t\t---------- SPK Pembelian Motor Yamaha ----------\n"),	
+write("\t\t\t\tSILAHKAN TEKAN 'ENTER' UNTUK MEMULAI PROGRAM\n"),
+readchar(A), hasil(A).
+hasil(A):-rx(A,'\r'), harga.
+hasil(A):-rx(A,'\r'), harga.
+hasil(_):-run.
+harga:-
+write("\nPILIH KISARAN HARGA MOTOR YANG INGIN DIBELI :"),
+write("\n"),
+write("1. 10.000.000 - 20.000.000\n"),
+write("2. 20.000.000 - 50.000.000\n"),
+write("3. 50.000.000 - 100.000.000\n"),
+write("4. 100.000.000 - 500.000.000\n"), 
+write("MASUKAN PILIHAN ANDA: (1-4): \n\n"),
+readchar(A), pilihanharga(A).
+pilihanharga(A):- rx(A,'1'),pilih1.
+pilihanharga(A):- rx(A,'2'),pilih2.
+pilihanharga(A):- rx(A,'3'),pilih3.
+pilihanharga(A):- rx(A,'4'),pilih4.
+pilihanharga(_):-harga.
+pilih1:-
+write("SPK PEMBELIAN MOTOR YAMAHA"), nl,
+write("--------------------------------------------------------------------------------"),nl,
+write("TIPE MOTOR DENGAN HARGA 10.000.000 - 20.000.000\n"),
+write("PILIH TIPE MOTOR\n"),
+write("1. TIPE MATIC\n"),
+write("2. TIPE BEBEK\n"),
+write("MASUKKAN PILIHAN ANDA:\n"),
+readchar(A), terus1(A).
+
+terus1(A):-rx(A,'1'),cc11.
+terus1(A):-rx(A,'2'),cc21.
+terus1(_):-pilih1.
+
+pilih2:-
+write("SPK PEMBELIAN MOTOR YAMAHA"), nl,
+write("--------------------------------------------------------------------------------"),nl,
+write("TIPE MOTOR DENGAN HARGA 20.000.000 - 50.000.000\n"),
+write("PILIH TIPE MOTOR\n"),
+write("1. TIPE MATIC\n"),
+write("2. TIPE SPORT\n"),
+write("MASUKKAN PILIHAN ANDA:\n"),
+readchar(A), terus2(A).
+
+terus2(A):-rx(A,'1'),cc12.
+terus2(A):-rx(A,'2'),cc22.
+terus2(_):-pilih2.
+
+pilih3:-
+write("SPK PEMBELIAN MOTOR YAMAHA"), nl,
+write("--------------------------------------------------------------------------------"),nl,
+write("TIPE MOTOR DENGAN HARGA 50.000.000 - 100.000.000\n"),
+write("PILIH TIPE MOTOR\n"),
+write("1. TIPE SPORT\n"),
+write("MASUKKAN PILIHAN ANDA:\n"),
+readchar(A), terus3(A).
+
+terus3(A):-rx(A,'1'),cc13.
+terus3(_):-pilih3.
+
+pilih4:-
+write("SPK PEMBELIAN MOTOR YAMAHA"), nl,
+write("--------------------------------------------------------------------------------"),nl,
+write("TIPE MOTOR DENGAN HARGA 100.000.000 - 500.000.000\n"),
+write("PILIH TIPE MOTOR\n"),
+write("1. TIPE MATIC\n"),
+write("2. TIPE SPORT\n"),
+write("MASUKKAN PILIHAN ANDA:\n"),
+readchar(A), terus4(A).
+
+terus4(A):-rx(A,'1'),cc14.
+terus4(A):-rx(A,'2'),cc24.
+terus4(_):-pilih4.
+
+pilih5:-
+orang(Nama,Nim),
+write("Nama	: ",Nama),nl,
+write("NIM	: ",Nim),nl,
+write("---------------------------------------------------"),nl,
+fail.
+pilih5.
+
+%--- PILIH CC ---%
+
+cc11:-
+write("\nSPK PEMBELIAN MOTOR YAMAHA"), nl,
+write("--------------------------------------------------------------------------------"),nl,
+write("PILIH CC MOTOR :\n"),
+write("1. 125 CC\n"),
+write("2. 115 CC\n"),
+write("MASUKKAN PILIHAN ANDA:\n"),
+readchar(A), 
+terus5(A).
+
+terus5(A):-
+rx(A,'1'),
+lanjut11.
+
+terus5(A):-
+rx(A,'2'),
+lanjut21.
+
+terus5(_):-
+cc11.
+
+cc21:-
+write("\nSPK PEMBELIAN MOTOR YAMAHA"), nl,
+write("--------------------------------------------------------------------------------"),nl,
+write("PILIH CC MOTOR :\n"),
+write("1. 150 CC\n"),
+write("2. 115 CC\n"),
+write("3. 114 CC\n"),
+write("MASUKKAN PILIHAN ANDA:\n"),
+readchar(A), 
+terus6(A).
+
+terus6(A):-
+rx(A,'1'),
+lanjut32.
+
+terus6(A):-
+rx(A,'2'),
+lanjut33.
+
+terus6(A):-
+rx(A,'3'),
+lanjut34.
+
+terus6(_):-
+cc21.
+
+cc12:-
+write("\nSPK PEMBELIAN MOTOR YAMAHA"), nl,
+write("--------------------------------------------------------------------------------"),nl,
+write("PILIH CC MOTOR :\n"),
+write("1. 150 CC\n"),
+write("MASUKKAN PILIHAN ANDA:\n"),
+readchar(A), 
+terus7(A).
+
+terus7(A):-
+rx(A,'1'),
+lanjut10.
+
+terus7(_):-
+cc12.
+
+cc22:-
+write("\nSPK PEMBELIAN MOTOR YAMAHA"), nl,
+write("--------------------------------------------------------------------------------"),nl,
+write("PILIH CC MOTOR :\n"),
+write("1. 250 CC\n"),
+write("2. 225 CC\n"),
+write("3. 155 CC\n"),
+write("4. 150 CC\n"),
+write("MASUKKAN PILIHAN ANDA:\n"),
+readchar(A), 
+terus8(A).
+
+terus8(A):-
+rx(A,'1'),lanjut20.
+
+terus8(A):-
+rx(A,'2'),lanjut30.
+
+terus8(A):-
+rx(A,'3'),lanjut40.
+
+terus8(A):-
+rx(A,'4'),lanjut50.
+
+terus8(_):-
+cc22.
+
+cc13:-
+write("\nSPK PEMBELIAN MOTOR YAMAHA"), nl,
+write("--------------------------------------------------------------------------------"),nl,
+write("PILIH CC MOTOR :\n"),
+write("1. 250 CC\n"),
+write("MASUKKAN PILIHAN ANDA:\n"),
+readchar(A), 
+terus9(A).
+
+terus9(A):-
+rx(A,'1'),
+lanjut60.
+
+terus9(_):-
+cc13.
+
+cc14:-
+write("\nSPK PEMBELIAN MOTOR YAMAHA"), nl,
+write("--------------------------------------------------------------------------------"),nl,
+write("PILIH CC MOTOR :\n"),
+write("1. 530 CC\n"),
+write("MASUKKAN PILIHAN ANDA:\n"),
+readchar(A), 
+terus10(A).
+
+terus10(A):-
+rx(A,'1'),lanjut70.
+
+terus10(_):-
+cc14.
+
+cc24:-
+write("\nSPK PEMBELIAN MOTOR YAMAHA"), nl,
+write("--------------------------------------------------------------------------------"),nl,
+write("PILIH CC MOTOR :\n"),
+write("1. 1000 CC\n"),
+write("2. 847 CC\n"),
+write("3. 599 CC\n"),
+write("MASUKKAN PILIHAN ANDA:\n"),
+readchar(A), 
+terus11(A).
+
+terus11(A):-
+rx(A,'1'),
+lanjut80.
+
+terus11(A):-
+rx(A,'2'),
+lanjut90.
+
+terus11(A):-
+rx(A,'3'),
+lanjut100.
+
+terus11(_):-
+cc24.
+
+ww(Z,Z):-!.
+ww(_,_):-
+fail.
+
+lanjut11:-
+write("\nMENURUT ANALISA PROGRAM MOTOR YANG COCOK UNTUK ANDA ADALAH : "), nl,
+write("--------------------------------------------------------------------------------"),nl,
+write("DAFTAR HARGA DAN MOTOR TIPE MATIC DENGAN 125 CC: \n"),
+write("1. YAMAHA MIO M3 (Rp. 14.450.000) \n"),
+write("2. YAMAHA MIO SOUL GT (Rp. 15.650.000) \n"),
+write("KEMBALI MELIHAT DAFTAR HARGA? (Y|T)\n"),
+readchar(A),back1(A).
+
+back1(A):-ww(A,'Y'),run.
+back1(A):-ww(A,'y'),run.
+back1(A):-ww(A,'T'),akhir.
+back1(A):-ww(A,'t'),akhir.
+back1(_):-lanjut11.
+
+lanjut21:-
+write("\nMENURUT ANALISA PROGRAM MOTOR YANG COCOK UNTUK ANDA ADALAH : "), nl,
+write("--------------------------------------------------------------------------------"),nl,
+write("DAFTAR HARGA DAN MOTOR TIPE MATIC DENGAN 115 CC: \n"),
+write("1. YAMAHA MIO J F1\n"),
+write("KEMBALI MELIHAT DAFTAR HARGA? (Y|T)\n"),
+readchar(A),back11(A).
+
+back11(A):-ww(A,'Y'),run.
+back11(A):-ww(A,'y'),run.
+back11(A):-ww(A,'T'),akhir.
+back11(A):-ww(A,'t'),akhir.
+back11(_):-lanjut21.
+
+lanjut32:-
+write("\nMENURUT ANALISA PROGRAM MOTOR YANG COCOK UNTUK ANDA ADALAH : "), nl,
+write("--------------------------------------------------------------------------------"),nl,
+write("DAFTAR HARGA DAN MOTOR TIPE BEBEK DENGAN 150 CC: \n"),
+write("1. YAMAHA MX KIN (Rp. 19.250.000)\n"),
+write("2. YAMAHA JUPITER MX (Rp. 18.450.000)\n"),
+write("KEMBALI MELIHAT DAFTAR HARGA? (Y|T)\n"),
+readchar(A),back2(A).
+
+back2(A):-ww(A,'Y'),run.
+back2(A):-ww(A,'y'),run.
+back2(A):-ww(A,'T'),akhir.
+back2(A):-ww(A,'t'),akhir.
+back2(_):-lanjut32.
+
+lanjut33:-
+write("\nMENURUT ANALISA PROGRAM MOTOR YANG COCOK UNTUK ANDA ADALAH : "), nl,
+write("--------------------------------------------------------------------------------"),nl,
+write("DAFTAR HARGA DAN MOTOR TIPE BEBEK DENGAN 115 CC: \n"),
+write("1. YAMAHA JUPITER Z F1 (Rp. 15.100.000)\n"),
+write("KEMBALI MELIHAT DAFTAR HARGA? (Y|T)\n"),
+readchar(A),back22(A).
+
+back22(A):-ww(A,'Y'),run.
+back22(A):-ww(A,'y'),run.
+back22(A):-ww(A,'T'),akhir.
+back22(A):-ww(A,'t'),akhir.
+back22(_):-lanjut33.
+
+lanjut34:-
+write("\nMENURUT ANALISA PROGRAM MOTOR YANG COCOK UNTUK ANDA ADALAH : "), nl,
+write("--------------------------------------------------------------------------------"),nl,
+write("DAFTAR HARGA DAN MOTOR TIPE BEBEK DENGAN 114 CC: \n"),
+write("1. YAMAHA VEGA RR (Rp. 12.650.000)\n"),
+write("2. YAMAHA VORCE (Rp. 14.400.000)\n"),
+write("KEMBALI MELIHAT DAFTAR HARGA? (Y|T)\n"),
+readchar(A),back3(A).
+
+back3(A):-ww(A,'Y'),run.
+back3(A):-ww(A,'y'),run.
+back3(A):-ww(A,'T'),akhir.
+back3(A):-ww(A,'t'),akhir.
+back3(_):-lanjut34.
+
+lanjut10:-
+write("\nMENURUT ANALISA PROGRAM MOTOR YANG COCOK UNTUK ANDA ADALAH : "), nl,
+write("--------------------------------------------------------------------------------"),nl,
+write("DAFTAR HARGA DAN MOTOR TIPE MATIC DENGAN 150 CC: \n"),
+write("1. YAMAHA NMAX (Rp. 27.900.000)\n"),
+write("KEMBALI MELIHAT DAFTAR HARGA? (Y|T)\n"),
+readchar(A),back33(A).
+
+back33(A):-ww(A,'Y'),run.
+back33(A):-ww(A,'y'),run.
+back33(A):-ww(A,'T'),akhir.
+back33(A):-ww(A,'t'),akhir.
+back33(_):-lanjut10.
+
+lanjut20:-
+write("\nMENURUT ANALISA PROGRAM MOTOR YANG COCOK UNTUK ANDA ADALAH : "), nl,
+write("--------------------------------------------------------------------------------"),nl,
+write("DAFTAR HARGA DAN MOTOR TIPE SPORT DENGAN 250 CC: \n"),
+write("1. YAMAHA MT-25 (Rp. 46.000.000)\n"),
+write("KEMBALI MELIHAT DAFTAR HARGA? (Y|T)\n"),
+readchar(A),back4(A).
+
+back4(A):-ww(A,'Y'),run.
+back4(A):-ww(A,'y'),run.
+back4(A):-ww(A,'T'),akhir.
+back4(A):-ww(A,'t'),akhir.
+back4(_):-lanjut20.
+
+lanjut30:-
+write("\nMENURUT ANALISA PROGRAM MOTOR YANG COCOK UNTUK ANDA ADALAH : "), nl,
+write("--------------------------------------------------------------------------------"),nl,
+write("DAFTAR HARGA DAN MOTOR TIPE SPORT DENGAN 225 CC: \n"),
+write("1. YAMAHA SCORPIO Z (Rp. 25.600.000)\n"),
+write("KEMBALI MELIHAT DAFTAR HARGA? (Y|T)\n"),
+readchar(A),back44(A).
+
+back44(A):-ww(A,'Y'),run.
+back44(A):-ww(A,'y'),run.
+back44(A):-ww(A,'T'),akhir.
+back44(A):-ww(A,'t'),akhir.
+back44(_):-lanjut30.
+
+lanjut40:-
+write("\nMENURUT ANALISA PROGRAM MOTOR YANG COCOK UNTUK ANDA ADALAH : "), nl,
+write("--------------------------------------------------------------------------------"),nl,
+write("DAFTAR HARGA DAN MOTOR TIPE SPORT DENGAN 155 CC: \n"),
+write("1. YAMAHA R15 (Rp. 29.800.000)\n"),
+write("KEMBALI MELIHAT DAFTAR HARGA? (Y|T)\n"),
+readchar(A),back5(A).
+
+back5(A):-ww(A,'Y'),run.
+back5(A):-ww(A,'y'),run.
+back5(A):-ww(A,'T'),akhir.
+back5(A):-ww(A,'t'),akhir.
+back5(_):-lanjut40.
+
+lanjut50:-
+write("\nMENURUT ANALISA PROGRAM MOTOR YANG COCOK UNTUK ANDA ADALAH : "), nl,
+write("--------------------------------------------------------------------------------"),nl,
+write("DAFTAR HARGA DAN MOTOR TIPE SPORT DENGAN 150 CC: \n"),
+write("1. YAMAHA VIXION (Rp. 24.400.000)\n"),
+write("KEMBALI MELIHAT DAFTAR HARGA? (Y|T)\n"),
+readchar(A),back55(A).
+
+back55(A):-ww(A,'Y'),run.
+back55(A):-ww(A,'y'),run.
+back55(A):-ww(A,'T'),akhir.
+back55(A):-ww(A,'t'),akhir.
+back55(_):-lanjut50.
+
+lanjut60:-
+write("\nMENURUT ANALISA PROGRAM MOTOR YANG COCOK UNTUK ANDA ADALAH : "), nl,
+write("--------------------------------------------------------------------------------"),nl,
+write("DAFTAR HARGA DAN MOTOR TIPE SPORT DENGAN 250 CC: \n"),
+write("1. YAMAHA WR250R (Rp. 93.000.000)\n"),
+write("2. YAMAHA R25 (Rp. 59.000.000)\n"),
+write("3. YAMAHA R25 MOVIESTAR (Rp. 53.600.000)\n"),
+write("KEMBALI MELIHAT DAFTAR HARGA? (Y|T)\n"),
+readchar(A),back6(A).
+
+back6(A):-ww(A,'Y'),run.
+back6(A):-ww(A,'y'),run.
+back6(A):-ww(A,'T'),akhir.
+back6(A):-ww(A,'t'),akhir.
+back6(_):-lanjut60.
+
+lanjut70:-
+write("\nMENURUT ANALISA PROGRAM MOTOR YANG COCOK UNTUK ANDA ADALAH : "), nl,
+write("--------------------------------------------------------------------------------"),nl,
+write("DAFTAR HARGA DAN MOTOR TIPE MATIC DENGAN 530 CC: \n"),
+write("1. YAMAHA TMAX (Rp. 185.000.000)\n"),
+write("KEMBALI MELIHAT DAFTAR HARGA? (Y|T)\n"),
+readchar(A),back66(A).
+
+back66(A):-ww(A,'Y'),run.
+back66(A):-ww(A,'y'),run.
+back66(A):-ww(A,'T'),akhir.
+back66(A):-ww(A,'t'),akhir.
+back66(_):-lanjut70.
+
+lanjut80:-
+write("\nMENURUT ANALISA PROGRAM MOTOR YANG COCOK UNTUK ANDA ADALAH : "), nl,
+write("--------------------------------------------------------------------------------"),nl,
+write("DAFTAR HARGA DAN MOTOR TIPE SPORT DENGAN 1000 CC: \n"),
+write("1. YAMAHA R1 (Rp. 495.000.000)\n"),
+write("KEMBALI MELIHAT DAFTAR HARGA? (Y|T)\n"),
+readchar(A),back7(A).
+
+back7(A):-ww(A,'Y'),run.
+back7(A):-ww(A,'y'),run.
+back7(A):-ww(A,'T'),akhir.
+back7(A):-ww(A,'t'),akhir.
+back7(_):-lanjut80.
+
+lanjut90:-
+write("\nMENURUT ANALISA PROGRAM MOTOR YANG COCOK UNTUK ANDA ADALAH : "), nl,
+write("--------------------------------------------------------------------------------"),nl,
+write("DAFTAR HARGA DAN MOTOR TIPE SPORT DENGAN 847 CC: \n"),
+write("1. YAMAHA MT-09 (Rp. 250.000.000)\n"),
+write("KEMBALI MELIHAT DAFTAR HARGA? (Y|T)\n"),
+readchar(A),back77(A).
+
+back77(A):-ww(A,'Y'),run.
+back77(A):-ww(A,'y'),run.
+back77(A):-ww(A,'T'),akhir.
+back77(A):-ww(A,'t'),akhir.
+back77(_):-lanjut90.
+
+lanjut100:-
+write("\nMENURUT ANALISA PROGRAM MOTOR YANG COCOK UNTUK ANDA ADALAH : "), nl,
+write("--------------------------------------------------------------------------------"),nl,
+write("DAFTAR HARGA DAN MOTOR TIPE SPORT DENGAN 599 CC: \n"),
+write("1. YAMAHA R6 (Rp. 260.000.000)\n"),
+write("KEMBALI MELIHAT DAFTAR HARGA? (Y|T)\n"),
+readchar(A),back8(A).
+
+back8(A):-ww(A,'Y'),run.
+back8(A):-ww(A,'y'),run.
+back8(A):-ww(A,'T'),akhir.
+back8(A):-ww(A,'t'),akhir.
+back8(_):-lanjut100.
+nn(N,N):-!.
+nn(_,_):-fail.
+
+akhir:-
+write(" \n\n**********TERIMA KASIH TELAH MENGGUNAKAN PROGRAM KAMI**********\n"),
+write("\nDAFTAR NAMA ANGGOTA KELOMPOK\n"),
+pilih5,
+write(" TEKAN TOMBOL 'Y' KEMBALI KE MENU UTAMA.\n"),
+write(" TEKAN TOMBOL 'X' KELUAR DARI PROGRAM.\n"),
+readchar(A),keluar(A).
+keluar(A):-nn(A,'Y'),run.
+keluar(A):-nn(A,'y'),run.
+keluar(A):-nn(A,'X'),exit.
+keluar(A):-nn(A,'x'),exit.
+keluar(_):-akhir.
+
+GOAL
+consult("data.txt"),
+run.
